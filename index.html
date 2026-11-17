@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placas solares en casa · Guía paso a paso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <p class="etiqueta">Guía paso a paso</p>
+    <h1>Cómo se instalan unas placas solares en casa</h1>
+    <p class="intro">
+      Desde que se colocan los paneles en el tejado hasta que la casa funciona con energía del sol.
+      Cuatro pasos y lo que pasa en cada uno.
+    </p>
+  </header>
+
+  <main class="guia">
+
+    <!-- Indicador de pasos -->
+    <nav class="pasos" aria-label="Pasos de la instalación">
+      <ol>
+        <li><button class="paso-btn" data-paso="0"><span class="num">1</span><span class="nombre">Montaje</span></button></li>
+        <li><button class="paso-btn" data-paso="1"><span class="num">2</span><span class="nombre">Conversor</span></button></li>
+        <li><button class="paso-btn" data-paso="2"><span class="num">3</span><span class="nombre">Batería</span></button></li>
+        <li><button class="paso-btn" data-paso="3"><span class="num">4</span><span class="nombre">Resultado</span></button></li>
+      </ol>
+      <div class="progreso"><div class="progreso-barra"></div></div>
+    </nav>
+
+    <!-- PASO 1: MONTAJE -->
+    <section class="paso" data-paso="0" aria-labelledby="titulo-1">
+      <figure class="paso-img">
+        <img src="img/montaje.jpg" alt="Instaladores colocando paneles solares sobre los raíles de aluminio en un tejado">
+      </figure>
+      <div class="paso-texto">
+        <p class="paso-num">Paso 1 de 4</p>
+        <h2 id="titulo-1">Montaje de los paneles</h2>
+        <p>
+          Lo primero es fijar en el tejado una <strong>estructura de raíles de aluminio</strong>. Se ancla
+          a las vigas del tejado con unos soportes que pasan por debajo de las tejas, para no crear goteras.
+          Sobre esos raíles se atornillan los paneles, uno al lado del otro.
+        </p>
+        <p>
+          Los paneles se orientan preferiblemente <strong>hacia el sur</strong> y con algo de inclinación,
+          para recibir el máximo de sol durante el día. Después se conectan entre sí con cables especiales
+          para exterior, formando lo que se llama una <em>cadena</em> o <em>string</em>.
+        </p>
+        <ul class="claves">
+          <li><span>¿Qué hacen los paneles?</span> Convierten la luz del sol en electricidad <strong>continua (CC)</strong>.</li>
+          <li><span>Seguridad</span> Los instaladores trabajan con arnés y casco: es trabajo en altura.</li>
+          <li><span>Duración</span> En una vivienda normal, el montaje suele llevar 1 o 2 días.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PASO 2: CONVERSOR -->
+    <section class="paso" data-paso="1" aria-labelledby="titulo-2" hidden>
+      <figure class="paso-img">
+        <img src="img/conversor.jpeg" alt="Inversor solar instalado en la pared junto al cuadro eléctrico de la casa">
+      </figure>
+      <div class="paso-texto">
+        <p class="paso-num">Paso 2 de 4</p>
+        <h2 id="titulo-2">El conversor (inversor)</h2>
+        <p>
+          La electricidad que sale de los paneles es <strong>corriente continua (CC)</strong>, pero los
+          enchufes y aparatos de casa funcionan con <strong>corriente alterna (CA)</strong>. El encargado de
+          transformarla es el <strong>inversor</strong>, también llamado conversor.
+        </p>
+        <p>
+          Se cuelga en una pared interior o en un lugar resguardado, cerca del <strong>cuadro eléctrico</strong>.
+          A él llegan los cables del tejado y de él sale la línea que alimenta la casa. Su pantalla muestra
+          en todo momento cuánta energía se está produciendo.
+        </p>
+        <ul class="claves">
+          <li><span>Entra</span> Corriente continua desde los paneles.</li>
+          <li><span>Sale</span> Corriente alterna a 230 V, la misma que la de la red.</li>
+          <li><span>Extra</span> Muchos inversores se controlan desde una app en el móvil.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PASO 3: BATERÍA -->
+    <section class="paso" data-paso="2" aria-labelledby="titulo-3" hidden>
+      <figure class="paso-img">
+        <img src="img/bateria.jpg" alt="Batería solar en el suelo, bajo el inversor y junto al cuadro eléctrico">
+      </figure>
+      <div class="paso-texto">
+        <p class="paso-num">Paso 3 de 4</p>
+        <h2 id="titulo-3">La batería</h2>
+        <p>
+          Los paneles producen durante el día, pero en casa también se gasta energía por la noche. La
+          <strong>batería</strong> guarda la electricidad que sobra cuando hace sol para usarla después.
+        </p>
+        <p>
+          Se coloca junto al inversor, normalmente en el suelo o en la pared de un garaje o trastero, y se
+          conecta a él. El inversor decide solo qué hacer con la energía en cada momento:
+        </p>
+        <ol class="orden">
+          <li>Primero, <strong>alimenta la casa</strong>.</li>
+          <li>Si sobra, <strong>carga la batería</strong>.</li>
+          <li>Si la batería está llena, el excedente se <strong>vierte a la red</strong> (y la compañía lo descuenta de la factura).</li>
+        </ol>
+        <ul class="claves">
+          <li><span>Opcional</span> La instalación funciona sin batería, pero con ella se aprovecha mucha más energía propia.</li>
+          <li><span>Ampliable</span> Muchas baterías son modulares: se pueden añadir bloques más adelante.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PASO 4: RESULTADO -->
+    <section class="paso" data-paso="3" aria-labelledby="titulo-4" hidden>
+      <figure class="paso-img">
+        <img src="img/placa-solar-1.png" alt="Placas solares ya instaladas sobre un tejado de teja">
+      </figure>
+      <div class="paso-texto">
+        <p class="paso-num">Paso 4 de 4</p>
+        <h2 id="titulo-4">Instalación terminada</h2>
+        <p>
+          Con todo conectado, la casa ya funciona con energía del sol. El recorrido de la electricidad
+          queda así:
+        </p>
+        <div class="flujo" aria-label="Recorrido de la energía">
+          <span>☀️ Sol</span><i>→</i>
+          <span>Paneles</span><i>→</i>
+          <span>Inversor</span><i>→</i>
+          <span>Casa / Batería</span>
+        </div>
+        <p>
+          Cuando no hay sol y la batería se ha agotado, la casa toma la electricidad de la red como siempre,
+          <strong>sin cortes y sin que tengas que hacer nada</strong>.
+        </p>
+        <ul class="claves">
+          <li><span>Mantenimiento</span> Mínimo: limpiar los paneles de vez en cuando y revisar la app.</li>
+          <li><span>Vida útil</span> Los paneles suelen durar más de 25 años.</li>
+          <li><span>Ahorro</span> Depende del consumo y del sol, pero la factura de la luz baja de forma notable.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Navegación -->
+    <div class="navegacion">
+      <button id="anterior" class="btn btn-secundario">← Anterior</button>
+      <button id="siguiente" class="btn btn-primario">Siguiente →</button>
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <p>Usa las flechas del teclado ← → para moverte entre pasos.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

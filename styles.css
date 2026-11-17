@@ -1,0 +1,280 @@
+:root {
+  --fondo: #f6f7f9;
+  --tarjeta: #ffffff;
+  --texto: #1f2933;
+  --texto-suave: #5b6672;
+  --borde: #e3e7ec;
+  --acento: #f59e0b;        /* amarillo sol */
+  --acento-suave: #fef3c7;
+  --azul: #1e5aa8;          /* azul panel */
+  --azul-suave: #e8f0fb;
+  --radio: 16px;
+  --radio-sm: 10px;
+  --sombra: 0 4px 20px rgba(31, 41, 51, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  padding: 0 16px;
+}
+
+/* Cabecera */
+.cabecera {
+  max-width: 760px;
+  margin: 48px auto 32px;
+  text-align: center;
+}
+.etiqueta {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 4px 12px;
+  background: var(--acento-suave);
+  color: #92400e;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.cabecera h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  line-height: 1.2;
+}
+.intro {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+/* Contenedor */
+.guia {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* Indicador de pasos */
+.pasos {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 16px 16px 0;
+  margin-bottom: 20px;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+.pasos ol {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 14px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.paso-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px;
+  border: none;
+  background: none;
+  border-radius: var(--radio-sm);
+  font: inherit;
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.paso-btn:hover { background: var(--fondo); }
+.paso-btn .num {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--borde);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.paso-btn .nombre { font-weight: 600; font-size: 0.95rem; }
+
+.paso-btn.hecho .num {
+  background: var(--azul-suave);
+  border-color: var(--azul-suave);
+  color: var(--azul);
+}
+.paso-btn.activo { color: var(--texto); }
+.paso-btn.activo .num {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: #fff;
+}
+
+.progreso {
+  height: 4px;
+  margin: 0 -16px;
+  background: var(--borde);
+}
+.progreso-barra {
+  height: 100%;
+  width: 25%;
+  background: var(--acento);
+  transition: width 0.35s ease;
+}
+
+/* Tarjeta de paso */
+.paso {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  animation: aparecer 0.35s ease;
+}
+.paso[hidden] { display: none; }
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.paso-img {
+  margin: 0;
+  background: var(--fondo);
+  min-height: 320px;
+}
+.paso-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.paso-texto { padding: 32px; }
+.paso-num {
+  margin: 0 0 4px;
+  color: var(--acento);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.paso-texto h2 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+.paso-texto p { margin: 0 0 14px; }
+
+/* Lista ordenada (prioridades de la batería) */
+.orden {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+.orden li { margin-bottom: 4px; }
+
+/* Puntos clave */
+.claves {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 16px;
+  background: var(--azul-suave);
+  border-radius: var(--radio-sm);
+  display: grid;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+.claves li span {
+  display: block;
+  font-weight: 700;
+  color: var(--azul);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Flujo de energía */
+.flujo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+.flujo span {
+  padding: 6px 12px;
+  background: var(--acento-suave);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.flujo i {
+  font-style: normal;
+  color: var(--texto-suave);
+}
+
+/* Navegación */
+.navegacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0 0;
+}
+.btn {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+.btn:disabled { opacity: 0.35; cursor: default; }
+.btn-primario {
+  background: var(--azul);
+  color: #fff;
+}
+.btn-primario:hover:not(:disabled) { background: #174a8c; }
+.btn-secundario {
+  background: var(--tarjeta);
+  border-color: var(--borde);
+  color: var(--texto);
+}
+.btn-secundario:hover:not(:disabled) { background: var(--fondo); }
+
+button:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+/* Pie */
+.pie {
+  max-width: 1040px;
+  margin: 32px auto 40px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .paso { grid-template-columns: 1fr; }
+  .paso-img { min-height: 0; aspect-ratio: 16 / 10; }
+  .paso-texto { padding: 24px; }
+}
+@media (max-width: 560px) {
+  .pasos ol { gap: 2px; }
+  .paso-btn { flex-direction: column; gap: 4px; padding: 6px 2px; }
+  .paso-btn .nombre { font-size: 0.75rem; }
+  .cabecera { margin-top: 32px; }
+}
